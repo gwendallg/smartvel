@@ -62,6 +62,7 @@ namespace SmartVel.ViewModels
             try
             {
                 Application.Current.Waiting();
+                Task.Delay(3000);
                 await _userService.ConnectAsync(Login, Password, IsRememberMe);
                 Application.Current.Dismiss();
             }

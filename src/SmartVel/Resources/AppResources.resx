@@ -159,6 +159,9 @@
   <data name="Ok" xml:space="preserve">
     <value>Ok</value>
   </data>
+  <data name="Parametres" xml:space="preserve">
+    <value>Paramètres</value>
+  </data>
   <data name="PermissionCamera" xml:space="preserve">
     <value>Appareil Photo</value>
   </data>
@@ -194,6 +197,9 @@
   </data>
   <data name="Supprimer" xml:space="preserve">
     <value>Supprimer</value>
+  </data>
+  <data name="Vaches" xml:space="preserve">
+    <value>Vaches</value>
   </data>
   <data name="Valider" xml:space="preserve">
     <value>Valider</value>

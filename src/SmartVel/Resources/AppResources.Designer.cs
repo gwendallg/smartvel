@@ -187,6 +187,15 @@ namespace SmartVel.Resources {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Paramètres.
+        /// </summary>
+        internal static string Parametres {
+            get {
+                return ResourceManager.GetString("Parametres", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Appareil Photo.
         /// </summary>
         internal static string PermissionCamera {
@@ -291,6 +300,15 @@ namespace SmartVel.Resources {
         internal static string Supprimer {
             get {
                 return ResourceManager.GetString("Supprimer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Vaches.
+        /// </summary>
+        internal static string Vaches {
+            get {
+                return ResourceManager.GetString("Vaches", resourceCulture);
             }
         }
         

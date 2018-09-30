@@ -1,11 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SmartVel.Views.MainPage"
-             Title="{Binding Title}">
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:views="clr-namespace:SmartVel.Views;assembly=SmartVel"
+            xmlns:ctrl="clr-namespace:SmartVel.Controls"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            x:Class="SmartVel.Views.MainPage"
+            Title="{Binding Title}"
+            android:TabbedPage.ToolbarPlacement="Bottom" >
+    <views:CowListPage Title="{ctrl:TranslateMarkup Text=Vaches}"
+                       Icon="ic_cow.png" />
+    <views:ParameterPage Title="{ctrl:TranslateMarkup Text=Parametres }"
+                         Icon="ic_parameter.png" />
 
-    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-        <Label Text="Welcome to Xamarin Forms and Prism!" />
-    </StackLayout>
-
-</ContentPage>
+</TabbedPage>

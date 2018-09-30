@@ -198,4 +198,10 @@
   <data name="IdentifiantOuMotDePasseInvaalide" xml:space="preserve">
     <value>ID o contraseña no válido</value>
   </data>
+  <data name="Parametres" xml:space="preserve">
+    <value>Parámetros</value>
+  </data>
+  <data name="Vaches" xml:space="preserve">
+    <value>Vacas</value>
+  </data>
 </root>

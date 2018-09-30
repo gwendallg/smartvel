@@ -39,6 +39,8 @@ namespace SmartVel
         {
             ViewConfig.Init(containerRegistry);
             ServiceConfig.Init(containerRegistry);
+            containerRegistry.RegisterForNavigation<CowListPage>();
+            containerRegistry.RegisterForNavigation<ParameterPage>();
         }
 
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
