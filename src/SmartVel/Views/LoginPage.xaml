@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             xmlns:ctrl="clr-namespace:SmartVel.Controls"
+             xmlns:ffsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             x:Class="SmartVel.Views.LoginPage"
+             ios:Page.UseSafeArea="True">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height=".5" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid Row="0"
+              VerticalOptions="End">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Entry Text="{Binding Login}"
+                   Grid.Row="0"
+                   Placeholder="{ctrl:TranslateMarkup Text=Identifiant}" />
+            <Entry Text="{Binding Password}"
+                   Grid.Row="1"
+                   IsPassword="True"
+                   Placeholder="{ctrl:TranslateMarkup Text=MotDePasse}" />
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width=".2*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Switch IsToggled="{Binding IsRememberMe}"
+                        Grid.Column="0"
+                        Grid.Row="0"
+                        HorizontalOptions="Start" />
+                <Label Text="{ctrl:TranslateMarkup Text=SeSouvenirDeMoi}"
+                       Grid.Column="1"
+                       Grid.Row="0"
+                       HorizontalOptions="StartAndExpand" />
+                <ffsvg:SvgCachedImage Source="{Binding Culture, Converter={StaticResource CultureToSvg}}"
+                                      Grid.Column="0"
+                                      Grid.Row="1" />
+
+            </Grid>
+        </Grid>
+        <StackLayout Grid.Row="1"
+                     BackgroundColor="{StaticResource ColorGreenDark}"
+                     VerticalOptions="FillAndExpand"
+                     HorizontalOptions="FillAndExpand" />
+        <ctrl:RoundedButton Text="{ctrl:TranslateMarkup SeConnecter}"
+                            Grid.Column="0"
+                            Grid.Row="2"
+                            Command="{Binding ConnectCommand}" />
+    </Grid>
+</ContentPage>

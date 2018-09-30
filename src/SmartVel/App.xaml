@@ -1,0 +1,295 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<prism:PrismApplication xmlns="http://xamarin.com/schemas/2014/forms"
+                        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                        xmlns:prism="clr-namespace:Prism.Unity;assembly=Prism.Unity.Forms"
+                        xmlns:conv="clr-namespace:SmartVel.Converters"
+                        xmlns:ctrl="clr-namespace:SmartVel.Controls"
+                        xmlns:system="clr-namespace:System;assembly=netstandard"
+                        x:Class="SmartVel.App">
+    <Application.Resources>
+
+        <!-- Application resource dictionary -->
+
+        <!-- colors -->
+        <Color x:Key="ColorGreenLight">#d4ec95</Color>
+        <Color x:Key="ColorGreen">#abcb59</Color>
+        <Color x:Key="ColorGreenDark">#94a75f</Color>
+        <Color x:Key="ColorWhite">#ffffff</Color>
+        <Color x:Key="ColorGrayLight">#f1f1f3</Color>
+        <Color x:Key="ColorGrayDark">#4c5c66</Color>
+        <Color x:Key="ColorBlack">#000000</Color>
+        <Color x:Key="ColorPink">#db77ab</Color>
+        <Color x:Key="ColorPinkDark">#c50067</Color>
+        <Color x:Key="ColorGrayTransp">#91919191</Color>
+         
+        <!-- colors hex ( transformations ) -->
+        <x:String x:Key="ColorGreenLightHex">#d4ec95</x:String>
+        <x:String x:Key="ColorGreeHexn">#abcb59</x:String>
+        <x:String x:Key="ColorGreenDarkHex">#94a75f</x:String>
+        <x:String x:Key="ColorWhiteHex">#ffffff</x:String>
+        <x:String x:Key="ColorGrayLightHex">#f1f1f3</x:String>
+        <x:String x:Key="ColorGrayDarkHex">#4c5c66</x:String>
+        <x:String x:Key="ColorBlackHex">#000000</x:String>
+        <x:String x:Key="ColorPinkHex">#db77ab</x:String>
+        <x:String x:Key="ColorPinkDarkHex">#c50067</x:String>
+        <x:String x:Key="ColorGrayTranspHex">#91919191</x:String>
+
+        <!-- converters -->
+        <conv:ByteToPhotoConverter x:Key="ByteToPhoto" />
+        <conv:SensorToResourceConverter x:Key="SensorToResource" />
+        <conv:CultureToSvgConverter x:Key="CultureToSvg" />
+
+        <!-- spacing -->
+        <x:Double x:Key="NoSpacing">0</x:Double>
+        <x:Double x:Key="SmallSpacing">2</x:Double>
+        <x:Double x:Key="MediumSpacing">4</x:Double>
+        <x:Double x:Key="BigSpacing">8</x:Double>
+
+        <!-- paddings -->
+        <x:Double x:Key="NoPadding">0</x:Double>
+        <x:Double x:Key="SmallPadding">5</x:Double>
+        <x:Double x:Key="MediumPadding">15</x:Double>
+        <x:Double x:Key="BigPadding">30</x:Double>
+
+        <!-- StackLayout -->
+        <Style TargetType="StackLayout">
+            <Setter Property="Padding"
+                    Value="{StaticResource SmallPadding}" />
+            <Setter Property="Spacing"
+                    Value="{StaticResource SmallSpacing}" />
+            <Setter Property="VerticalOptions"
+                    Value="StartAndExpand" />
+            <Setter Property="HorizontalOptions"
+                    Value="FillAndExpand" />
+        </Style>
+
+        <!-- Navigation Bar -->
+        <Style TargetType="NavigationPage"
+               ApplyToDerivedTypes="True">
+            <Setter Property="BarBackgroundColor"
+                    Value="{StaticResource ColorGreen}" />
+            <Setter Property="BarTextColor"
+                    Value="{StaticResource ColorWhite}" />
+            <Setter Property="Icon"
+                    Value="icon" />
+        </Style>
+
+        <!-- ContentPage -->
+        <Style TargetType="ContentPage"
+               ApplyToDerivedTypes="True">
+            <Setter Property="BackgroundColor"
+                    Value="{StaticResource ColorWhite}" />
+        </Style>
+
+        <!-- grid -->
+        <Style TargetType="Grid">
+            <Setter Property="Padding"
+                    Value="{StaticResource SmallPadding}" />
+            <Setter Property="RowSpacing"
+                    Value="{StaticResource SmallSpacing}" />
+            <Setter Property="ColumnSpacing"
+                    Value="{StaticResource SmallSpacing}" />
+        </Style>
+
+        <!--NoPadding-->
+        <Style x:Key="GridNoPaddingNoSpacing"
+               TargetType="Grid">
+            <Setter Property="Padding"
+                    Value="{StaticResource NoPadding}" />
+            <Setter Property="ColumnSpacing"
+                    Value="{StaticResource NoSpacing}" />
+            <Setter Property="RowSpacing"
+                    Value="{StaticResource NoSpacing}" />
+        </Style>
+
+        <Style x:Key="GridNoPaddingSmallSpacing"
+               TargetType="Grid">
+            <Setter Property="Padding"
+                    Value="{StaticResource NoPadding}" />
+            <Setter Property="ColumnSpacing"
+                    Value="{StaticResource SmallSpacing}" />
+            <Setter Property="RowSpacing"
+                    Value="{StaticResource SmallSpacing}" />
+        </Style>
+
+        <Style x:Key="GridNoPaddingMediumSpacing"
+               TargetType="Grid">
+            <Setter Property="Padding"
+                    Value="{StaticResource NoPadding}" />
+            <Setter Property="ColumnSpacing"
+                    Value="{StaticResource MediumSpacing}" />
+            <Setter Property="RowSpacing"
+                    Value="{StaticResource MediumSpacing}" />
+        </Style>
+
+        <Style x:Key="GridNoPaddingBigSpacing"
+               TargetType="Grid">
+            <Setter Property="Padding"
+                    Value="{StaticResource NoPadding}" />
+            <Setter Property="ColumnSpacing"
+                    Value="{StaticResource BigSpacing}" />
+            <Setter Property="RowSpacing"
+                    Value="{StaticResource BigSpacing}" />
+        </Style>
+
+        <!--SmallPadding-->
+        <Style x:Key="GridSmallPaddingNoSpacing"
+               TargetType="Grid">
+            <Setter Property="Padding"
+                    Value="{StaticResource SmallPadding}" />
+            <Setter Property="ColumnSpacing"
+                    Value="{StaticResource NoSpacing}" />
+            <Setter Property="RowSpacing"
+                    Value="{StaticResource NoSpacing}" />
+        </Style>
+
+        <Style x:Key="GridSmallPaddingSmallSpacing"
+               TargetType="Grid">
+            <Setter Property="Padding"
+                    Value="{StaticResource SmallPadding}" />
+            <Setter Property="ColumnSpacing"
+                    Value="{StaticResource SmallSpacing}" />
+            <Setter Property="RowSpacing"
+                    Value="{StaticResource SmallSpacing}" />
+        </Style>
+
+        <Style x:Key="GridSmallPaddingMediumSpacing"
+               TargetType="Grid">
+            <Setter Property="Padding"
+                    Value="{StaticResource SmallPadding}" />
+            <Setter Property="ColumnSpacing"
+                    Value="{StaticResource MediumSpacing}" />
+            <Setter Property="RowSpacing"
+                    Value="{StaticResource MediumSpacing}" />
+        </Style>
+
+        <Style x:Key="GridSmallPaddingBigSpacing"
+               TargetType="Grid">
+            <Setter Property="Padding"
+                    Value="{StaticResource SmallPadding}" />
+            <Setter Property="ColumnSpacing"
+                    Value="{StaticResource BigSpacing}" />
+            <Setter Property="RowSpacing"
+                    Value="{StaticResource BigSpacing}" />
+        </Style>
+
+        <!--MediumPadding-->
+        <Style x:Key="GridMediumPaddingNoSpacing"
+               TargetType="Grid">
+            <Setter Property="Padding"
+                    Value="{StaticResource MediumPadding}" />
+            <Setter Property="ColumnSpacing"
+                    Value="{StaticResource NoSpacing}" />
+            <Setter Property="RowSpacing"
+                    Value="{StaticResource NoSpacing}" />
+        </Style>
+
+        <Style x:Key="GridMediumPaddingSmallSpacing"
+               TargetType="Grid">
+            <Setter Property="Padding"
+                    Value="{StaticResource MediumPadding}" />
+            <Setter Property="ColumnSpacing"
+                    Value="{StaticResource SmallSpacing}" />
+            <Setter Property="RowSpacing"
+                    Value="{StaticResource SmallSpacing}" />
+        </Style>
+
+        <Style x:Key="GridMediumPaddingMediumSpacing"
+               TargetType="Grid">
+            <Setter Property="Padding"
+                    Value="{StaticResource MediumPadding}" />
+            <Setter Property="ColumnSpacing"
+                    Value="{StaticResource MediumSpacing}" />
+            <Setter Property="RowSpacing"
+                    Value="{StaticResource MediumSpacing}" />
+        </Style>
+
+        <Style x:Key="GridMediumPaddingBigSpacing"
+               TargetType="Grid">
+            <Setter Property="Padding"
+                    Value="{StaticResource MediumPadding}" />
+            <Setter Property="ColumnSpacing"
+                    Value="{StaticResource BigSpacing}" />
+            <Setter Property="RowSpacing"
+                    Value="{StaticResource BigSpacing}" />
+        </Style>
+
+        <!--BigPadding-->
+        <Style x:Key="GridBigPaddingNoSpacing"
+               TargetType="Grid">
+            <Setter Property="Padding"
+                    Value="{StaticResource BigPadding}" />
+            <Setter Property="ColumnSpacing"
+                    Value="{StaticResource NoSpacing}" />
+            <Setter Property="RowSpacing"
+                    Value="{StaticResource NoSpacing}" />
+        </Style>
+
+        <Style x:Key="GridBigPaddingSmallSpacing"
+               TargetType="Grid">
+            <Setter Property="Padding"
+                    Value="{StaticResource BigPadding}" />
+            <Setter Property="ColumnSpacing"
+                    Value="{StaticResource SmallSpacing}" />
+            <Setter Property="RowSpacing"
+                    Value="{StaticResource SmallSpacing}" />
+        </Style>
+
+        <Style x:Key="GridBigPaddingMediumSpacing"
+               TargetType="Grid">
+            <Setter Property="Padding"
+                    Value="{StaticResource BigPadding}" />
+            <Setter Property="ColumnSpacing"
+                    Value="{StaticResource MediumSpacing}" />
+            <Setter Property="RowSpacing"
+                    Value="{StaticResource MediumSpacing}" />
+        </Style>
+
+        <Style x:Key="GridBigPaddingBigSpacing"
+               TargetType="Grid">
+            <Setter Property="Padding"
+                    Value="{StaticResource BigPadding}" />
+            <Setter Property="ColumnSpacing"
+                    Value="{StaticResource BigSpacing}" />
+            <Setter Property="RowSpacing"
+                    Value="{StaticResource BigSpacing}" />
+        </Style>
+
+
+        <!-- button style -->
+        <Style TargetType="ctrl:RoundedButton">
+            <Setter Property="BackgroundColor" Value="{StaticResource ColorGreen}"/>
+            <Setter Property="TextColor" Value="{StaticResource ColorWhite}" />
+            <Setter Property="BorderColor" Value="{StaticResource ColorGreen}"/>
+            <Setter Property="AltBackgroundColor" Value="{StaticResource ColorGreenDark}"></Setter>
+            <Setter Property="AltTextColor" Value="{StaticResource ColorWhite}"></Setter>
+            <Setter Property="AltBorderColor" Value="{StaticResource ColorGreen}"></Setter>
+            <Setter Property="BorderWidth">
+                <OnPlatform x:TypeArguments="system:Int32">
+                    <On Platform="Android" Value="10" />
+                    <On Platform="iOS" Value="3" />
+                </OnPlatform>
+            </Setter>
+            <Setter Property="BorderRadius" Value="38" />
+            <Setter Property="HorizontalOptions" Value="Fill"/>
+        </Style>
+
+        <Style x:Key="Alt" TargetType="ctrl:RoundedButton">
+            <Setter Property="BackgroundColor" Value="{StaticResource ColorWhite}"/>
+            <Setter Property="TextColor" Value="{StaticResource ColorGreenDark}" />
+            <Setter Property="BorderColor" Value="{StaticResource ColorGreenDark}"/>
+            <Setter Property="AltBackgroundColor" Value="{StaticResource ColorGreenDark}"></Setter>
+            <Setter Property="AltTextColor" Value="{StaticResource ColorWhite}"></Setter>
+            <Setter Property="AltBorderColor" Value="{StaticResource ColorGreen}"></Setter>
+            <Setter Property="BorderWidth">
+                <OnPlatform x:TypeArguments="system:Int32">
+                    <On Platform="Android" Value="10" />
+                    <On Platform="iOS" Value="3" />
+                </OnPlatform>
+            </Setter>
+            <Setter Property="BorderRadius" Value="38" />
+            <Setter Property="HorizontalOptions" Value="Fill"/>
+        </Style>
+
+    </Application.Resources>
+</prism:PrismApplication>
