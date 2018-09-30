@@ -53,7 +53,10 @@ namespace SmartVel.ViewModels
             navigationService)
         {
             Culture = Application.Current.GetCurrentCulture();
-            ConnectCommand = new DelegateCommand(async () => await OnConnectAsync());
+            ConnectCommand =
+                new DelegateCommand(async () => await OnConnectAsync(), OnConnectAsyncOnCanExecute)
+                    .ObservesProperty(() => Login)
+                    .ObservesProperty(() => Password);
             _userService = userService;
         }
 
@@ -80,6 +83,9 @@ namespace SmartVel.ViewModels
                 });
             }
         }
+
+        private bool OnConnectAsyncOnCanExecute() =>
+            !string.IsNullOrWhiteSpace(Login) && !string.IsNullOrWhiteSpace(Password);
 
         /// <summary>
         /// 
